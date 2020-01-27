@@ -51,6 +51,11 @@ export default {
 
   data: () => ({
     //
-  })
+  }),
+
+  mounted() {
+    // eslint-disable-next-line no-console
+    console.warn(this);
+  }
 };
 </script>
