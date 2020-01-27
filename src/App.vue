@@ -41,7 +41,7 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld";
-
+import { GetUserInfo } from "@/services";
 export default {
   name: "App",
 
@@ -56,6 +56,7 @@ export default {
   mounted() {
     // eslint-disable-next-line no-console
     console.warn(this);
+    GetUserInfo();
   }
 };
 </script>
