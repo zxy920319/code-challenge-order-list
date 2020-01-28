@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="order-list-container">
     <v-app-bar app color="primary" light>
       <div class="d-flex align-center">
         <v-img
@@ -35,19 +35,18 @@
     </v-app-bar>
 
     <v-content>
-      <HelloWorld />
+      <user-profile />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-import { GetUserInfo } from "@/services";
+import UserProfile from "./components/UserProfile";
 export default {
   name: "App",
 
   components: {
-    HelloWorld
+    UserProfile
   },
 
   data: () => ({
@@ -63,7 +62,6 @@ export default {
   mounted() {
     // eslint-disable-next-line no-console
     console.warn(this);
-    GetUserInfo();
   },
 
   methods: {
@@ -90,3 +88,4 @@ export default {
   }
 };
 </script>
+

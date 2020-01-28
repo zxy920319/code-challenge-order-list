@@ -11,7 +11,7 @@ const handleError = err => {
 export async function GetUserInfo() {
   try {
     const res = await axios.get(ENDPOINT + "/pdefl");
-    return res;
+    return res.data;
   } catch (err) {
     return handleError(err);
   }
@@ -20,7 +20,7 @@ export async function GetUserInfo() {
 export async function GetLastOrders() {
   try {
     const res = await axios.get(ENDPOINT + "/19f9bd");
-    return res;
+    return res.data;
   } catch (err) {
     return handleError(err);
   }
@@ -29,7 +29,7 @@ export async function GetLastOrders() {
 export async function GetOrderInfo() {
   try {
     const res = await axios.get(ENDPOINT + "/o1sp5");
-    return res;
+    return res.data;
   } catch (err) {
     return handleError(err);
   }
