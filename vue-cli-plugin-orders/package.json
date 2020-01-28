@@ -1,0 +1,13 @@
+{
+  "name": "vue-cli-plugin-orders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "vue",
+    "vue-cli",
+    "rxjs",
+    "vue-rx"
+  ],
+  "author": "Bevin Zhuang"
+}

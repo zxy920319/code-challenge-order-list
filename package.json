@@ -4,19 +4,20 @@
   "private": true,
   "scripts": {
     "serve": "npm run build:css && vue-cli-service serve --open",
-    "serve:css": "npm run build:css && node-sass src/styles/index.scss public/css/main.min.css --output-style compressed --watch",
     "build": "npm run build:css && vue-cli-service build",
-    "build:css": "node-sass src/styles/index.scss public/css/main.min.css --output-style compressed",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
+    "build:css": "node-sass src/styles/index.scss public/css/main.min.css --output-style compressed",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
+    "serve:css": "npm run build:css && node-sass src/styles/index.scss public/css/main.min.css --output-style compressed --watch"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.4.4",
     "moment": "^2.24.0",
     "vue": "^2.6.10",
+    "vue-cli-plugin-orders": "file:vue-cli-plugin-orders",
     "vue-i18n": "^8.0.0",
     "vuetify": "^2.1.0",
     "vuex": "^3.1.2"
