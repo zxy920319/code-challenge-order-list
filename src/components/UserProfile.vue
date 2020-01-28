@@ -25,6 +25,11 @@
                 </v-avatar>
               </v-btn>
             </div>
+            <v-row justify="center" class="mt-4">
+              <div class="headline accent--text text--darken-4">
+                {{ name }}
+              </div>
+            </v-row>
           </v-sheet>
         </v-col>
       </v-row>
@@ -44,7 +49,10 @@ export default {
   }),
 
   computed: {
-    ...mapState(["profile"])
+    ...mapState(["profile"]),
+    name() {
+      return `${this.profile.firstName} ${this.profile.lastName}`;
+    }
   },
 
   mounted() {
@@ -63,22 +71,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-.profile-container {
-  height: calc(100vh + 400px);
-  background-color: var(--v-accent-lighten2);
-  .profile-wrap {
-    position: absolute;
-    top: 300px;
-  }
-  .picture {
-    margin-top: -64px;
-    display: inline-block;
-    button {
-      width: 160px;
-      height: 160px;
-    }
-  }
-}
-</style>

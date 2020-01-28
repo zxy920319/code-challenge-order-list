@@ -1,0 +1,16 @@
+.profile-container {
+  height: calc(100vh + 400px);
+  background-color: var(--v-accent-lighten2);
+  .profile-wrap {
+    position: absolute;
+    top: 300px;
+  }
+  .picture {
+    margin-top: -64px;
+    display: inline-block;
+    button {
+      width: 160px;
+      height: 160px;
+    }
+  }
+}
