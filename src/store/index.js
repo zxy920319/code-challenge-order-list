@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { GetLastOrders } from "@/services";
 
 Vue.use(Vuex);
 
@@ -9,11 +10,17 @@ const set = property => (state, payload) => (state[property] = payload);
 
 export default new Vuex.Store({
   state: {
-    profile: null
+    profile: null,
+    orders: {}
   },
   mutations: {
-    setProfile: set("profile")
+    setProfile: set("profile"),
+    setOrders: set("orders")
   },
-  actions: {},
+  actions: {
+    async getLast5Orders({ commit }) {
+      commit("setOrders", await GetLastOrders());
+    }
+  },
   modules: {}
 });

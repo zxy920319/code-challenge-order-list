@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import UserProfile from "./components/UserProfile";
 export default {
   name: "App",
@@ -62,9 +63,11 @@ export default {
   mounted() {
     // eslint-disable-next-line no-console
     console.warn(this);
+    this.getLast5Orders();
   },
 
   methods: {
+    ...mapActions(["getLast5Orders"]),
     setDefaultLang(title) {
       switch (title) {
         case "EN":
