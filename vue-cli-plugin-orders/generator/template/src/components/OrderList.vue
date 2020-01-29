@@ -1,10 +1,8 @@
 <template>
-  <div class="orders-wrapper">
+  <div v-if="computedOrders" class="orders-wrapper">
     <v-card
       v-for="(order, index) in computedOrders"
       :key="index"
-      class="mx-auto"
-      max-width="344"
       @click="() => $emit('click:order', order)"
     >
       <v-card-text>
@@ -21,9 +19,6 @@
         <div class="font-weight-black">
           {{ `${order.orderTotal} ${currency}` }}
         </div>
-        <v-btn text color="secondary">
-          More Detail
-        </v-btn>
       </v-card-actions>
     </v-card>
   </div>

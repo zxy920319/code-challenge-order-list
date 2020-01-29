@@ -1,10 +1,8 @@
 <template>
-  <div class="orders-wrapper">
+  <div v-if="computedOrders" class="orders-wrapper">
     <v-card
       v-for="(order, index) in computedOrders"
       :key="index"
-      class="mx-auto"
-      max-width="344"
       @click="() => $emit('click:order', order)"
     >
       <v-card-text>
@@ -43,7 +41,7 @@ export default {
     computedOrders() {
       let result = this.orders;
 
-      const orderNumber = 4;
+      const orderNumber = 5;
       if (this.orders.length > orderNumber) {
         result = this.orders.slice(0, orderNumber);
       }

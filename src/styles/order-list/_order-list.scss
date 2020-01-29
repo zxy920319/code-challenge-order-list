@@ -1,0 +1,10 @@
+.orders-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    .v-card {
+        width: 300px;
+        height: 200px;
+    }
+}

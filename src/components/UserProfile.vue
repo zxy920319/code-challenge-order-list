@@ -55,6 +55,11 @@
                 </div>
               </v-col>
             </v-row>
+            <v-row justify="center" align="center">
+              <v-col cols="12" md="8">
+                <order-list :currency="currency"></order-list>
+              </v-col>
+            </v-row>
           </v-sheet>
         </v-col>
       </v-row>
@@ -65,10 +70,11 @@
 <script>
 import { GetUserInfo } from "@/services";
 import { mapState, mapMutations } from "vuex";
+import OrderList from "./OrderList";
 import * as moment from "moment";
 export default {
   name: "UserProfile",
-
+  components: { OrderList },
   data: () => ({
     //
   }),
@@ -80,6 +86,15 @@ export default {
     },
     dob() {
       return moment(this.profile.birthday).format("D MMM YYYY");
+    },
+    currency() {
+      const options = {
+        dollar: "$",
+        yen: "¥",
+        euro: "€"
+      };
+      if (this.profile) return options[this.profile.currency];
+      else return options["euro"];
     }
   },
 

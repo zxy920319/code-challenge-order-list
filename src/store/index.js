@@ -11,11 +11,13 @@ const set = property => (state, payload) => (state[property] = payload);
 export default new Vuex.Store({
   state: {
     profile: null,
-    last5Orders: {}
+    last5Orders: null
   },
   getters: {
     orders: state => {
-      return Object.values(state.orders.last5Orders);
+      if (state.last5Orders) {
+        return Object.values(state.last5Orders.last5Orders);
+      } else return [];
     }
   },
   mutations: {
@@ -24,7 +26,7 @@ export default new Vuex.Store({
   },
   actions: {
     async getLast5Orders({ commit }) {
-      commit("last5Orders", await GetLastOrders());
+      commit("setLast5Orders", await GetLastOrders());
     }
   },
   modules: {}
