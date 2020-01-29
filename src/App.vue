@@ -8,6 +8,7 @@
           :src="require('@/assets/takeaway.svg')"
           transition="scale-transition"
           width="164"
+          @click="$router.push('/')"
         />
       </div>
 
@@ -26,7 +27,7 @@
           <v-list-item
             v-for="(item, i) in langs"
             :key="i"
-            @click="setDefaultLang(item.title)"
+            @click="setDefaultLang(item)"
           >
             <v-list-item-title>{{ item.name }}</v-list-item-title>
           </v-list-item>
@@ -100,9 +101,9 @@ export default {
 
   data: () => ({
     langs: [
-      { title: "EN", name: "English" },
-      { title: "ZH", name: "中文" },
-      { title: "JA", name: "日本語" }
+      { title: "EN", name: "English", target: "en" },
+      { title: "ZH", name: "中文", target: "zhHans" },
+      { title: "JA", name: "日本語", target: "ja" }
     ],
     selectedLang: "EN",
     sheet: false
@@ -119,25 +120,9 @@ export default {
 
   methods: {
     ...mapActions(["getLast5Orders"]),
-    setDefaultLang(title) {
-      switch (title) {
-        case "EN":
-          this.$vuetify.lang.current = "en";
-          break;
-
-        case "ZH":
-          this.$vuetify.lang.current = "zhHans";
-          break;
-
-        case "JA":
-          this.$vuetify.lang.current = "ja";
-          break;
-
-        default:
-          this.$vuetify.lang.current = "en";
-          break;
-      }
-      this.selectedLang = title;
+    setDefaultLang(lang) {
+      this.$i18n.locale = lang.target;
+      this.selectedLang = lang.title;
     }
   }
 };

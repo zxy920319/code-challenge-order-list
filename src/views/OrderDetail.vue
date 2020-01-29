@@ -6,6 +6,13 @@
       align="center"
       class="order-detail-constainer"
     >
+      <!-- <v-col cols="10" sm="8">
+        <v-row justify="end" class="ma-0">
+          <v-btn depressed color="accent">
+            Back
+          </v-btn>
+        </v-row>
+      </v-col> -->
       <v-col cols="10" sm="8">
         <v-card dark color="tertiary">
           <v-card-title class="headline">

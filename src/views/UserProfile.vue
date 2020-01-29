@@ -89,9 +89,6 @@ export default {
     ...mapMutations(["setProfile"]),
     async fetchUser() {
       const res = await GetUserInfo();
-      // eslint-disable-next-line no-console
-      console.log(res);
-
       if (res) this.setProfile(res);
     }
   }
