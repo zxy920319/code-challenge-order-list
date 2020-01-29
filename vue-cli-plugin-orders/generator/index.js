@@ -3,7 +3,8 @@ module.exports = (api, options) => {
     dependencies: {
       axios: "^0.19.2",
       vuetify: "^2.1.0",
-      vuex: "^3.1.2"
+      vuex: "^3.1.2",
+      moment: "^2.24.0"
     }
   });
 

@@ -1,31 +1,42 @@
 <template>
-  <div v-if="computedOrders" class="orders-wrapper">
-    <v-card
+  <v-row v-if="computedOrders" class="text-left" justify="start" align="center">
+    <v-col
+      cols="10"
+      md="4"
+      sm="6"
       v-for="(order, index) in computedOrders"
       :key="index"
-      @click="() => $emit('click:order', order)"
     >
-      <v-card-text>
-        <div>{{ order.orderTime }}</div>
-        <p class="display-1 text--primary">
-          {{ order.restaurantName }}
-        </p>
-        <p>{{ order.status }}</p>
-        <div class="text--primary">
-          {{ order.deliveryAddress }}
-        </div>
-      </v-card-text>
-      <v-card-actions>
-        <div class="font-weight-black">
-          {{ `${order.orderTotal} ${currency}` }}
-        </div>
-      </v-card-actions>
-    </v-card>
-  </div>
+      <v-card class="pa-2" height="230">
+        <v-card-text>
+          <div v-text="time(order.orderTime)"></div>
+          <p class="title text--primary">
+            {{ order.restaurantName }}
+          </p>
+          <p :class="{ 'info--text': order.status === 'In transit' }">
+            {{ order.status }}
+          </p>
+          <div class="subtitle-2 font-weight-black">
+            {{ `${order.orderTotal} ${currency}` }}
+          </div>
+        </v-card-text>
+        <v-card-actions>
+          <v-btn
+            color="primary"
+            text
+            @click="() => $emit('click:order', order)"
+          >
+            {{ $vuetify.lang.t("$vuetify.order.detail") }}
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
+import * as moment from "moment";
 export default {
   props: {
     currency: {
@@ -36,17 +47,25 @@ export default {
   computed: {
     ...mapGetters(["orders"]),
     computedOrders() {
+      if (!this.orders) return [];
       let result = this.orders;
       <% if (orderNumber) { %>
       const orderNumber = <%= orderNumber %>;
       <% } else { _%>
         const orderNumber = 5;
       <%_ } _%>
-      if(this.orders.length > orderNumber) {
+      if (this.orders.length > orderNumber) {
         result = this.orders.slice(0, orderNumber);
       }
       return result;
     }
+  },
+
+  methods: {
+    time(orderTime) {
+      if (!orderTime) return "";
+      return moment(orderTime).format("Do MMMM YYYY, h:mm:ss a");
+    },
   }
 };
 </script>

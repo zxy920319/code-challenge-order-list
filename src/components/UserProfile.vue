@@ -13,7 +13,7 @@
             elevation="24"
             class="mx-auto"
             height="100vh"
-            width="80vw"
+            width="90vw"
           >
             <v-row justify="center" align="center">
               <v-col cols="12" md="4">
@@ -56,7 +56,7 @@
               </v-col>
             </v-row>
             <v-row justify="center" align="center">
-              <v-col cols="12" md="8">
+              <v-col cols="12" md="8" sm="10">
                 <order-list :currency="currency"></order-list>
               </v-col>
             </v-row>
