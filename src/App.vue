@@ -42,7 +42,7 @@
 
 <script>
 import { mapActions } from "vuex";
-import UserProfile from "./components/UserProfile";
+import UserProfile from "@/views/UserProfile";
 export default {
   name: "App",
 
