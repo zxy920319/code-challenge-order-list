@@ -18,6 +18,13 @@ export default new Vuex.Store({
       if (state.last5Orders) {
         return Object.values(state.last5Orders.last5Orders);
       } else return [];
+    },
+    activeOrder: state => {
+      if (state.last5Orders) {
+        return Object.values(state.last5Orders.last5Orders).filter(
+          order => order.status === "In transit"
+        );
+      } else return [];
     }
   },
   mutations: {

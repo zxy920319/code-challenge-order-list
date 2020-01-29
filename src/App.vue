@@ -37,11 +37,17 @@
     <v-content>
       <user-profile />
     </v-content>
+
+    <v-btn fixed bottom right fab dark large color="secondary">
+      <v-badge color="error" content="!">
+        <v-icon dark>mdi-truck-delivery</v-icon>
+      </v-badge>
+    </v-btn>
   </v-app>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import UserProfile from "@/views/UserProfile";
 export default {
   name: "App",
@@ -59,6 +65,8 @@ export default {
     selectedLang: "EN"
     //
   }),
+
+  computed: mapGetters(["activeOrder"]),
 
   mounted() {
     // eslint-disable-next-line no-console
