@@ -38,11 +38,53 @@
       <user-profile />
     </v-content>
 
-    <v-btn fixed bottom right fab dark large color="secondary">
+    <v-btn
+      v-if="activeOrder.length > 0"
+      fixed
+      bottom
+      right
+      fab
+      dark
+      large
+      color="secondary"
+      @click="sheet = true"
+    >
       <v-badge color="error" content="!">
         <v-icon dark>mdi-truck-delivery</v-icon>
       </v-badge>
     </v-btn>
+
+    <v-bottom-sheet v-model="sheet" inset>
+      <v-sheet class="prominent-bar" height="160" tile>
+        <v-card
+          v-for="(item, index) in activeOrder"
+          :key="index"
+          outlined
+          dark
+          tile
+          elevation="8"
+          color="tertiary"
+          width="300"
+          height="140"
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <div class="overline mb-4">{{ item.status }}</div>
+              <v-list-item-title class="title mb-1">
+                {{ item.restaurantName }}
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                {{ item.orderTime }}
+              </v-list-item-subtitle>
+            </v-list-item-content>
+
+            <v-list-item-avatar tile size="80">
+              <img :src="require('@/assets/img/food.png')" alt="restaurant" />
+            </v-list-item-avatar>
+          </v-list-item>
+        </v-card>
+      </v-sheet>
+    </v-bottom-sheet>
   </v-app>
 </template>
 
@@ -62,7 +104,8 @@ export default {
       { title: "ZH", name: "中文" },
       { title: "JA", name: "日本語" }
     ],
-    selectedLang: "EN"
+    selectedLang: "EN",
+    sheet: false
     //
   }),
 
