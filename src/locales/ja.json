@@ -1,3 +1,6 @@
 {
-  "message": "こんにちは i18n !!"
+  "message": "こんにちは i18n !!",
+  "order": {
+    "detail": "注文詳細"
+  }
 }
