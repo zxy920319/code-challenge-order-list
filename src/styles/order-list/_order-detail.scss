@@ -1,0 +1,15 @@
+.order-detail-constainer {
+
+  .order-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .food-info {
+      width: 350px;
+      margin: 0 20px 20px 0;
+      text-align: left;
+  }
+}

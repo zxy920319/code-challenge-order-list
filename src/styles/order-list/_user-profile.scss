@@ -1,10 +1,19 @@
 .profile-container {
-  height: calc(100vh + 400px);
+  height: auto;
+  display: flex;
+  justify-content: center;
   background-color: var(--v-accent-lighten2);
+
+  .v-parallax {
+    width: 100vw;
+  }
+
   .profile-wrap {
     position: absolute;
+    margin-bottom: 20px;
     top: 300px;
   }
+
   .picture {
     margin-top: -64px;
     display: inline-block;

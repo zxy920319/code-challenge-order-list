@@ -8,13 +8,7 @@
     <v-container class="profile-wrap">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <v-sheet
-            v-if="profile"
-            elevation="24"
-            class="mx-auto"
-            height="100vh"
-            width="90vw"
-          >
+          <v-sheet v-if="profile" elevation="24" class="mx-auto" width="90vw">
             <v-row justify="center" align="center">
               <v-col cols="12" md="4">
                 <div class="picture">
