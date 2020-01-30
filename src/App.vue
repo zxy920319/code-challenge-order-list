@@ -113,8 +113,6 @@ export default {
   computed: mapGetters(["activeOrder"]),
 
   mounted() {
-    // eslint-disable-next-line no-console
-    console.warn(this);
     this.getLast5Orders();
   },
 
