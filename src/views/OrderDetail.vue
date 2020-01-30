@@ -35,13 +35,13 @@
             <div>
               <div class="subtitle-2">Order Total</div>
               <p class="body-2">
-                {{ order.orderTotal }}
+                {{ order.orderTotal + currency }}
               </p>
             </div>
             <div>
               <div class="subtitle-2">Delivery Costs</div>
               <p class="body-2">
-                {{ order.deliveryCosts }}
+                {{ order.deliveryCosts + currency }}
               </p>
             </div>
             <div>
@@ -114,6 +114,7 @@
 <script>
 import { GetOrderInfo } from "@/services";
 import * as moment from "moment";
+import { mapState } from "vuex";
 
 export default {
   name: "OrderDetail",
@@ -121,6 +122,19 @@ export default {
   data: () => ({
     order: null
   }),
+
+  computed: {
+    ...mapState(["profile"]),
+    currency() {
+      const options = {
+        dollar: "$",
+        yen: "¥",
+        euro: "€"
+      };
+      if (this.profile) return options[this.profile.currency];
+      else return options["euro"];
+    }
+  },
 
   mounted() {
     this.getOrderInfo();
