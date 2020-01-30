@@ -1,34 +1,55 @@
 # code-challenge-order-list
 
-## Project setup
+### Responsive interface
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+vuetify
 ```
 
-### Compiles and minifies for production
+Vuetify is a component library for Vue.js and has been in active development since 2016. The goal of the vuetify is to provide users with everything that is needed to build rich and engaging web applications using the Material Design specification. It accomplishes that with a consistent update cycle, Long-term Support (LTS) for previous versions, responsive community engagement, a vast ecosystem of resources and a dedication to quality components.
+
+### Multilingualism
 ```
-npm run build
+vuetify + vue-i18n
 ```
 
-### Run your unit tests
+Vuetify and vue-i18n allows keep all of translations in one place. Easy to maintain. 
+
+### No reloading
 ```
-npm run test:unit
+vue-router
 ```
 
-### Run your end-to-end tests
+Use vue-router to implement SPA to allow redirect without reloading.  
+
+### Change theme color
 ```
-npm run test:e2e
+vuetify + css variable
 ```
 
-### Lints and fixes files
+Apart from vuetify built in feature, I found css variable very handy which can solve some extreme cases for vue project.
+
+### Separate and minimize the style 
 ```
-npm run lint
+node-sass
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Simply use node-sass to build compressed css file from scss
+
+### Centralized state
+```
+vuex
+```
+
+Apart from other caching approches, vuex would be enough to handle this challenge.  
+
+### Orders component plugin 
+```
+vue plugin
+```
+
+I write prompts to allow team choose the number of orders to display and use vuex to parse user currency
+
+### Avoid errors and anti-patterns 
+```
+Visual Studio Code + Eslint + GitLens + Prettier + Vetur + Vue VSCode Snippets + @vue/test-utils
+```
