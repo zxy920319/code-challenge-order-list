@@ -8,23 +8,14 @@
 
 <script>
 import OrderList from "@/components/OrderList";
-import { mapState } from "vuex";
+import mixin from "@/mixins";
 
 export default {
   name: "Orders",
+
+  mixins: [mixin],
+
   components: { OrderList },
-  computed: {
-    ...mapState(["profile"]),
-    currency() {
-      const options = {
-        dollar: "$",
-        yen: "¥",
-        euro: "€"
-      };
-      if (this.profile) return options[this.profile.currency];
-      else return options["euro"];
-    }
-  },
 
   methods: {
     handleClick(order) {
