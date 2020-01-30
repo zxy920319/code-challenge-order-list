@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderDetail should have computed order and equal or less than 5 1`] = `
+<v-scale-transition-stub origin="top center 0" currency="€">
+  <!---->
+</v-scale-transition-stub>
+`;
+
+exports[`OrderList should have computed order and equal or less than 5 1`] = `<v-row-stub tag="div" align="center" justify="start" class="text-left"></v-row-stub>`;

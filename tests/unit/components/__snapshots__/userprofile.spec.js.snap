@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserProfile should render class profile-container 1`] = `
+<div class="profile-container">
+  <v-parallax-stub height="400" alt="" src=""></v-parallax-stub>
+  <v-container-stub tag="div" class="profile-wrap">
+    <v-row-stub tag="div" align="center" justify="center">
+      <v-col-stub cols="12" tag="div" class="text-center">
+        <v-sheet-stub elevation="24" minheight="100vh" width="90vw" tag="div" class="mx-auto">
+          <v-row-stub tag="div" align="center" justify="center">
+            <v-col-stub cols="12" md="4" tag="div">
+              <div class="picture">
+                <v-btn-stub color="primary" elevation="4" tag="button" activeclass="" fab="true" type="button">
+                  <v-avatar-stub size="150"><img src="https://randomuser.me/api/portraits/men/81.jpg" alt="John Doe"></v-avatar-stub>
+                </v-btn-stub>
+              </div>
+              <v-col-stub cols="12" md="12" tag="div" class="d-flex justify-center align-center  headline accent--text text--darken-4">
+                John Doe
+                <v-icon-stub color="blue">mdi-gender-male</v-icon-stub>
+              </v-col-stub>
+              <div class="d-flex justify-center align-center mt-6 headline accent--text text--darken-4">
+                <v-icon-stub small="" color="primary" class="mr-4">mdi-email</v-icon-stub>
+                <div class="body-1 mt-1">john.doe@example.com</div>
+              </div>
+              <div class="d-flex justify-center align-center mt-4 headline accent--text text--darken-4">
+                <v-icon-stub small="" color="primary" class="mr-4">mdi-cake</v-icon-stub>
+                <div class="body-1 mt-1">date</div>
+              </div>
+              <div class="d-flex justify-center align-center mt-4 headline accent--text text--darken-4">
+                <v-icon-stub small="" color="primary" class="mr-4">mdi-home</v-icon-stub>
+                <div class="body-1 mt-1">8923 Mockingbird Hill</div>
+              </div>
+            </v-col-stub>
+          </v-row-stub>
+          <router-view></router-view>
+        </v-sheet-stub>
+      </v-col-stub>
+    </v-row-stub>
+  </v-container-stub>
+</div>
+`;

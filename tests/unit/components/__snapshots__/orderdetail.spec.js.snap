@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderDetail should render class order-detail-constainer 1`] = `
+<v-scale-transition-stub origin="top center 0">
+  <!---->
+</v-scale-transition-stub>
+`;
