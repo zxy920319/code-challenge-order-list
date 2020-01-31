@@ -67,6 +67,7 @@
           color="tertiary"
           width="300"
           height="140"
+          @click="() => handleClick(item)"
         >
           <v-list-item three-line>
             <v-list-item-content>
@@ -121,6 +122,18 @@ export default {
     setDefaultLang(lang) {
       this.$i18n.locale = lang.target;
       this.selectedLang = lang.title;
+    },
+
+    handleClick(order) {
+      const location = {
+        name: "OrderDetail"
+      };
+      location.params = { order };
+      this.$router.push(location);
+
+      this.$nextTick(() => {
+        this.sheet = false;
+      });
     }
   }
 };
