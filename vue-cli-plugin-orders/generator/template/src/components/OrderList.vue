@@ -1,9 +1,15 @@
 <template>
-  <v-row v-if="computedOrders" class="text-left" justify="start" align="center">
+  <v-row
+    v-if="computedOrders"
+    class="text-left"
+    :justify="$vuetify.breakpoint.xsOnly ? 'center' : 'start'"
+    align="center"
+  >
     <v-col
       cols="10"
-      md="4"
-      sm="6"
+      md="6"
+      sm="8"
+      xs="10"
       v-for="(order, index) in computedOrders"
       :key="index"
     >
