@@ -69,9 +69,11 @@
           </v-card>
         </v-row>
       </v-col>
-      <v-col cols="10" sm="8" class="mb-8">
-        <v-timeline v-for="(item, index) in order.status.history" :key="index">
+      <v-col v-if="$vuetify.breakpoint.mdAndUp" cols="10" sm="8" class="mb-8">
+        <v-timeline>
           <v-timeline-item
+            v-for="(item, index) in order.status.history"
+            :key="index"
             color="primary lighten-2"
             fill-dot
             :right="Boolean(index % 2)"
@@ -91,6 +93,29 @@
                   }}</v-col>
                 </v-row>
               </v-container>
+            </v-card>
+          </v-timeline-item>
+        </v-timeline>
+      </v-col>
+      <v-col v-else cols="10" class="mb-8">
+        <v-timeline align-top dense>
+          <v-timeline-item
+            v-for="(item, index) in order.status.history"
+            :key="index"
+            color="primary lighten-2"
+            small
+          >
+            <v-card>
+              <v-card-text>
+                <v-row class="pt-1">
+                  <v-col>
+                    <strong>{{ item.status }}</strong>
+                    <div class="caption">
+                      {{ formatTime(item.statusStart) }}
+                    </div>
+                  </v-col>
+                </v-row>
+              </v-card-text>
             </v-card>
           </v-timeline-item>
         </v-timeline>
