@@ -1,6 +1,11 @@
 <template>
   <v-scale-transition>
-    <v-row v-if="order" justify="center" align="center" class="order-detail-constainer">
+    <v-row
+      v-if="order"
+      justify="center"
+      align="center"
+      class="order-detail-constainer"
+    >
       <!-- <v-col cols="10" sm="8">
         <v-row justify="end" class="ma-0">
           <v-btn depressed color="accent">
@@ -10,7 +15,9 @@
 			</v-col>-->
       <v-col cols="10" sm="8">
         <v-card dark color="tertiary">
-          <v-card-title class="headline">{{ order.status.currentStatus }}</v-card-title>
+          <v-card-title class="headline">{{
+            order.status.currentStatus
+          }}</v-card-title>
 
           <v-card-text class="order-info">
             <div>
@@ -38,12 +45,21 @@
       </v-col>
       <v-col cols="10" sm="8">
         <v-row class="ma-0 flex-wrap">
-          <v-card v-for="(item, index) in order.products" :key="index" class="food-info" outlined>
+          <v-card
+            v-for="(item, index) in order.products"
+            :key="index"
+            class="food-info"
+            outlined
+          >
             <v-list-item three-line>
               <v-list-item-content>
                 <div class="overline mb-4">NUMBER: {{ item.amount }}</div>
-                <v-list-item-title class="title mb-1">{{ item.productName }}</v-list-item-title>
-                <v-list-item-subtitle>{{ item.productDescription }}</v-list-item-subtitle>
+                <v-list-item-title class="title mb-1">{{
+                  item.productName
+                }}</v-list-item-title>
+                <v-list-item-subtitle>{{
+                  item.productDescription
+                }}</v-list-item-subtitle>
               </v-list-item-content>
 
               <v-list-item-avatar tile size="80">
@@ -64,11 +80,15 @@
             <v-card>
               <v-card-title class="primary lighten-2">
                 <v-icon dark size="42" class="mr-4">mdi-magnify</v-icon>
-                <h2 class="headline white--text font-weight-light">{{ item.status }}</h2>
+                <h2 class="headline white--text font-weight-light">
+                  {{ item.status }}
+                </h2>
               </v-card-title>
               <v-container>
                 <v-row>
-                  <v-col cols="12" md="10">{{ formatTime(item.statusStart) }}</v-col>
+                  <v-col cols="12" md="10">{{
+                    formatTime(item.statusStart)
+                  }}</v-col>
                 </v-row>
               </v-container>
             </v-card>
