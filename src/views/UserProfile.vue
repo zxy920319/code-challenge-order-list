@@ -18,7 +18,7 @@
             <v-row justify="center" align="center">
               <v-col cols="12" md="4">
                 <div class="picture">
-                  <v-btn fab color="primary" elevation="4">
+                  <v-btn fab color="primary" elevation="4" @click="handleClick">
                     <v-avatar size="150">
                       <img :src="profile.picture.large" :alt="name" />
                     </v-avatar>
@@ -90,6 +90,13 @@ export default {
     async fetchUser() {
       const res = await GetUserInfo();
       if (res) this.setProfile(res);
+    },
+
+    handleClick() {
+      const location = {
+        name: "Orders"
+      };
+      this.$router.push(location);
     }
   }
 };
