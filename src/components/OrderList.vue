@@ -1,14 +1,19 @@
 <template>
-  <v-row v-if="computedOrders" class="text-left" justify="start" align="center">
+  <v-row
+    v-if="computedOrders"
+    class="text-left"
+    :justify="$vuetify.breakpoint.xsOnly ? 'center' : 'start'"
+    align="center"
+  >
     <v-col
       cols="10"
-      md="4"
+      lg="4"
       sm="6"
       v-for="(order, index) in computedOrders"
       :key="index"
     >
       <v-card class="pa-2" height="230">
-        <v-card-text>
+        <v-card-text class="text-truncate">
           <div v-text="time(order.orderTime)"></div>
           <p class="title text--primary">
             {{ order.restaurantName }}

@@ -7,14 +7,13 @@
   >
     <v-col
       cols="10"
-      md="6"
-      sm="8"
-      xs="10"
+      lg="4"
+      sm="6"
       v-for="(order, index) in computedOrders"
       :key="index"
     >
       <v-card class="pa-2" height="230">
-        <v-card-text>
+        <v-card-text class="text-truncate">
           <div v-text="time(order.orderTime)"></div>
           <p class="title text--primary">
             {{ order.restaurantName }}
